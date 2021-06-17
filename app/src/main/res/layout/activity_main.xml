@@ -31,15 +31,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/toDoList"
-        android:layout_width="379dp"
-        android:layout_height="635dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ScrollView
+        android:layout_width="354dp"
+        android:layout_height="483dp"
+        android:layout_marginTop="48dp"
+        android:background="#D9D9F4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editActivity"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/editActivity">
+
+        <LinearLayout
+            android:id="@+id/toDoList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
