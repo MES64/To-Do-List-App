@@ -1,8 +1,4 @@
-// ToDo Set importance and order by it
 // ToDo Same with deadline (urgency)
-
-// Importance:
-// Either important or not important; put into separate sections
 
 // Urgency:
 // Order in each section by how much time there is left to do it
@@ -18,38 +14,55 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private boolean important = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // To check importance
+        Switch importanceSwitch = findViewById(R.id.importanceSwitch);
+        importanceSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                important = isChecked ? true : false;
+            }
+        });
     }
 
     // On-Click Listener Methods ///////////////////////////////////////////////////////////////////
 
     public void addItem(View v) {
+        // Create Item
         CheckBox checkBox = createCheckBox();
-
         Button removeButton = createRemoveButton();
-
         LinearLayout item = createItemRow();
 
         item.addView(checkBox);
         item.addView(removeButton);
 
-        // Add to Linear Layout (to do list)
-        LinearLayout toDoList = findViewById(R.id.toDoList);
+        // Get correct to-do list
+        LinearLayout toDoList;
+        if (important) toDoList = findViewById(R.id.toDoImportant);
+        else           toDoList = findViewById(R.id.toDoUnimportant);
+
+        // Add item to correct Linear Layout (to do list)
         toDoList.addView(item);
     }
 
     private void removeItem(View v) {
         LinearLayout item = (LinearLayout)v.getParent();
 
-        LinearLayout toDoList = findViewById(R.id.toDoList);
+        //LinearLayout toDoList = findViewById(R.id.toDoImportant);
+        LinearLayout toDoList = (LinearLayout)item.getParent();
 
         toDoList.removeView(item);
     }

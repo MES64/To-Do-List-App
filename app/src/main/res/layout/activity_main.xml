@@ -31,17 +31,47 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
-        android:layout_width="354dp"
-        android:layout_height="483dp"
-        android:layout_marginTop="48dp"
-        android:background="#D9D9F4"
+    <Switch
+        android:id="@+id/importanceSwitch"
+        android:layout_width="125dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/importance"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editActivity" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="346dp"
+        android:layout_height="249dp"
+        android:layout_marginTop="48dp"
+        android:background="#DF8781"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editActivity">
+        app:layout_constraintTop_toBottomOf="@+id/importanceSwitch">
 
         <LinearLayout
-            android:id="@+id/toDoList"
+            android:id="@+id/toDoImportant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="346dp"
+        android:layout_height="247dp"
+        android:layout_marginTop="16dp"
+        android:background="#B7D5E3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
+
+        <LinearLayout
+            android:id="@+id/toDoUnimportant"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />
