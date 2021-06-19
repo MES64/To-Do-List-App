@@ -3,5 +3,6 @@
     <string name="add_item">Add</string>
     <string name="activity">Activity</string>
     <string name="importance">Important</string>
-    <string name="remove">Remove</string>
+    <string name="deadline">Deadline</string>
+    <string name="remove">X</string>
 </resources>
