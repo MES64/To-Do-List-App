@@ -324,6 +324,7 @@ public class MainActivity extends AppCompatActivity {
          ArrayList<String> timeSet = thisImportant ? timeSetImportant : timeSetUnimportant;
 
          // Insert totalMinutesLeft in the correct place (in ascending order)
+         // ToDo Really, the best way to do this is via Binary Search
          int index = 0;
          if (!timeSet.isEmpty()) {
              int thatMinutesLeft = getTimeLeft(timeSet.get(index));
