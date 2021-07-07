@@ -29,7 +29,7 @@ For now, you must pull the code into Android Studio and run on an emulator to gi
 
 ### Data Structures
 
-2 array lists are used to keep track of the item deadlines, one for each list, which maintains the order of the items by deadline. 
+2 array lists are used to keep track of the item deadlines, one for each to-do list, which maintains the order of the items by deadline. Array lists are used for easier access to deadline information, and to deal with the "None" and checked item cases more easily (compared to using the linear layout for everything). 
 
 ### Implementation
 
