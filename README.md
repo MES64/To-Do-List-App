@@ -4,6 +4,8 @@ To-do List App with different levels of importance and deadlines; Android (Java)
 
 [Video Demo](https://www.youtube.com/watch?v=pshMmGvd1QA&t=1s)
 
+![ToDo](https://user-images.githubusercontent.com/15747137/125118265-60247000-e0e7-11eb-90fe-ae4c40f0c91e.png)
+
 Made a to-do list app featuring: 
   - Adding and removing items
   - 2 separate lists based on importance
